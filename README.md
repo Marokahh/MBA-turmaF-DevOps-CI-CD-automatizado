@@ -31,7 +31,7 @@ O fluxo de trabalho foi estruturado com base na pirâmide DIKW e no movimento Da
                     │
                     ▼
        [Página Ativa em Produção]
-
+```
 ## 2. Estrutura de Diretórios
 
 O projeto segue estritamente a padronização e a hierarquia de pastas exigidas pelo motor de orquestração do GitHub Actions:
@@ -44,7 +44,7 @@ seu-projeto/
 │       └── cd.yml      # Configuração da esteira de Entrega Contínua
 └── site/
     └── index.html      # Página estática para publicação em ambiente produtivo
-
+```
 ## 3. Especificações dos Workflows
 
 ### 3.1. Integração Contínua (`ci.yml`)
