@@ -1,0 +1,28 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Verificar arquivo de indicadores
+        run: |
+          if [ ! -f site/index.html ]; then
+            echo "Erro: index.html nao encontrado no diretorio site/"
+            exit 1
+          fi
+
+      - name: Upload do artefato de build
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-producao
+          path: site/
