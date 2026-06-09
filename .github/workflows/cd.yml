@@ -32,6 +32,8 @@ jobs:
         with:
           name: site-producao
           path: ./public
+          run_id: ${{ github.event.workflow_run.id }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload do artefato de implantacao
         uses: actions/upload-pages-artifact@v3
